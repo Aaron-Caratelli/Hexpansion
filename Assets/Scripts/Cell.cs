@@ -48,6 +48,11 @@ namespace Hexpansion
             return neighbours[dir];
         }
 
+        public void SetState(ClaimState newState)
+        {
+
+        }
+
         private void Start()
         {
             _initialPos = transform.position;

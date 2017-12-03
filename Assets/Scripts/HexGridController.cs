@@ -28,6 +28,8 @@ namespace Hexpansion
 
             foreach (var tile in hexGrid)
               tile.GetComponent<Tween>().Flip(CellFlipSpeed);
+
+
             hexGrid.MidCell.GetComponent<Tween>().StopFlip();
             empire.ownedCells.Add(hexGrid.MidCell);            
         }
