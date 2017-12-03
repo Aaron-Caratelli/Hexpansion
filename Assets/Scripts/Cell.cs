@@ -14,10 +14,18 @@ namespace Hexpansion
         DownRight,
         DownLeft,
         Left
-    } 
+    }
+    
+    public enum ClaimState
+    {
+        Hidden,
+        Visible,
+        Owned
+    }
 
     public class Cell : MonoBehaviour
     {
+        public ClaimState claimState = ClaimState.Hidden;
         private Vector3 _initialPos;
 
         public Vector3 InitialPos
@@ -38,6 +46,11 @@ namespace Hexpansion
         public Cell Neighbour(HexDir dir)
         {
             return neighbours[dir];
+        }
+
+        public void SetState(ClaimState newState)
+        {
+
         }
 
         private void Start()

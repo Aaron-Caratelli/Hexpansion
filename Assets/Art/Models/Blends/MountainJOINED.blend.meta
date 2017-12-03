@@ -1,37 +1,48 @@
 fileFormatVersion: 2
-guid: 0a0b5df68f2a5804cab4283a9ab39422
-timeCreated: 1512273910
+guid: 43885ed842ed0394d88a86b4cb70505d
+timeCreated: 1512299887
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Lamp
-    100006: Tile
     400000: //RootNode
-    400002: Camera
-    400004: Lamp
-    400006: Tile
-    2000000: Camera
     2300000: //RootNode
-    2300002: Tile
     3300000: //RootNode
-    3300002: Tile
-    4300000: Cylinder
-    4300002: Tile
-    10800000: Lamp
+    4300000: Icosphere_018
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: e74fbf0ea54aab44b9541c3bc9f96e52, type: 2}
+      name: Fir
+    second: {fileID: 2100000, guid: cbc4868bb2673494b9137b19c8d25cd0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TileMat
-    second: {fileID: 2100000, guid: 2986931224f9a37498d71de0586059c8, type: 2}
+      name: Grass
+    second: {fileID: 2100000, guid: 9026799f3c2f447528878981f8f5f85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: eb06b3076c72f8447ad12a3ff9f4f7b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow
+    second: {fileID: 2100000, guid: bf7cdb1bb2a54446eadca4b8f784e8df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: a3e44f3607c6d42129ddfb004feaf6d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk
+    second: {fileID: 2100000, guid: acdac39760700464199e22f61e729816, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -103,7 +114,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

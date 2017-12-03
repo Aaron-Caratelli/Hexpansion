@@ -8,15 +8,30 @@ namespace Hexpansion
     {
         public float CellRaiseDist;
         public float CellRaiseSpeed;
+        public float CellFlipSpeed;
 
         public HexGrid hexGrid;
 
         private Cell _selectedTile;
         private List<Cell> _raisedTiles = new List<Cell>();
 
+        public Empire empire;
+
         void Start()
         {
+            empire = new Empire();
+
             hexGrid = FindObjectOfType<HexGrid>();
+            hexGrid.Populate();
+
+            var tilesToFlip = hexGrid.AllCells;
+
+            foreach (var tile in hexGrid)
+              tile.GetComponent<Tween>().Flip(CellFlipSpeed);
+
+
+            hexGrid.MidCell.GetComponent<Tween>().StopFlip();
+            empire.ownedCells.Add(hexGrid.MidCell);            
         }
 
         void Update()
@@ -44,7 +59,14 @@ namespace Hexpansion
 
                     // Prevent duplicate Tweening
                     if (_selectedTile != null && !_raisedTiles.Contains(_selectedTile))
-                        RaiseTile(_selectedTile);
+                    {
+                        if (empire.CanClaim(_selectedTile) && !empire.ownedCells.Contains(_selectedTile))
+                        {
+                            empire.ownedCells.Add(_selectedTile);
+                            _selectedTile.GetComponent<Tween>().Flip(CellFlipSpeed);
+                        }                        
+                    }
+
                 }
             }
         }

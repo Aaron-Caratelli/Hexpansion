@@ -1,27 +1,26 @@
 fileFormatVersion: 2
-guid: 0a0b5df68f2a5804cab4283a9ab39422
-timeCreated: 1512273910
+guid: 323d06b524d196f4bb7a506930a9a0d8
+timeCreated: 1512299885
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Lamp
-    100006: Tile
     400000: //RootNode
-    400002: Camera
-    400004: Lamp
-    400006: Tile
-    2000000: Camera
     2300000: //RootNode
-    2300002: Tile
     3300000: //RootNode
-    3300002: Tile
-    4300000: Cylinder
-    4300002: Tile
-    10800000: Lamp
+    4300000: Icosphere.018
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fir
+    second: {fileID: 2100000, guid: f68b948ea647f4257939ac32a09932ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 0b2b533be0b614e6c9748c8ed5575c04, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -30,8 +29,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: TileMat
-    second: {fileID: 2100000, guid: 2986931224f9a37498d71de0586059c8, type: 2}
+      name: Snow
+    second: {fileID: 2100000, guid: adad83d94a39d45d98a22455a80fb5b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: ac4ea7f450f6e40d5b0e380fe9664272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk
+    second: {fileID: 2100000, guid: 92dfef7029c4d44ccabfd17c747bf6c8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

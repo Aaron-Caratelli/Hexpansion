@@ -1,37 +1,45 @@
 fileFormatVersion: 2
-guid: 0a0b5df68f2a5804cab4283a9ab39422
-timeCreated: 1512273910
+guid: aa7c1a7bb2639304e9c0133d3c8ef1ac
+timeCreated: 1512299003
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Camera
-    100004: Lamp
-    100006: Tile
-    400000: //RootNode
-    400002: Camera
-    400004: Lamp
-    400006: Tile
-    2000000: Camera
-    2300000: //RootNode
-    2300002: Tile
-    3300000: //RootNode
-    3300002: Tile
-    4300000: Cylinder
-    4300002: Tile
-    10800000: Lamp
+    100000: Circle_001
+    100002: Circle_002
+    100004: Circle_003
+    100006: Circle_004
+    100008: Circle_005
+    100010: //RootNode
+    400000: Circle_001
+    400002: Circle_002
+    400004: Circle_003
+    400006: Circle_004
+    400008: Circle_005
+    400010: //RootNode
+    2300000: Circle_001
+    2300002: Circle_002
+    2300004: Circle_003
+    2300006: Circle_004
+    2300008: Circle_005
+    3300000: Circle_001
+    3300002: Circle_002
+    3300004: Circle_003
+    3300006: Circle_004
+    3300008: Circle_005
+    4300000: Circle_005
+    4300002: Circle_004
+    4300004: Circle_003
+    4300006: Circle_002
+    4300008: Circle_001
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: e74fbf0ea54aab44b9541c3bc9f96e52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TileMat
-    second: {fileID: 2100000, guid: 2986931224f9a37498d71de0586059c8, type: 2}
+      name: Bramble
+    second: {fileID: 2100000, guid: 0ec27e648156e5249a82ec944e25655b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -103,7 +111,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
