@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cylinder
+    4300002: Tile
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -18,6 +19,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material_001
     second: {fileID: 2100000, guid: eb06b3076c72f8447ad12a3ff9f4f7b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TileMat
+    second: {fileID: 2100000, guid: 2986931224f9a37498d71de0586059c8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

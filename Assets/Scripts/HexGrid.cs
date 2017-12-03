@@ -9,6 +9,19 @@ namespace Hexpansion
     {
         public List<List<Cell>> cells;
 
+        public List<Cell> AllCells
+        {
+            get
+            {
+                var result = new List<Cell>();
+
+                foreach (var col in cells)
+                    result.AddRange(col);
+
+                return result;
+            }
+        }
+
         public int NumCols;
         public int NumRows;
         public float HexSize;
@@ -51,8 +64,7 @@ namespace Hexpansion
             }
         }
 
-        // Use this for initialization
-        void Start()
+        public void Populate()
         {
             cells = new List<List<Cell>>();
 
@@ -96,6 +108,20 @@ namespace Hexpansion
             }
 
             c.neighbours = neighbours;
+        }
+
+        public Cell MidCell
+        {
+            get
+            {
+                if (Cols == 0 || Rows == 0)
+                    return null;
+
+                int midCol = System.Convert.ToInt32(Cols / 2);
+                int midRow = System.Convert.ToInt32(Rows / 2);
+
+                return cells[midCol][midRow];
+            }
         }
 
         public Cell ByIndex(int col, int row)

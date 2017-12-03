@@ -14,10 +14,18 @@ namespace Hexpansion
         DownRight,
         DownLeft,
         Left
-    } 
+    }
+    
+    public enum ClaimState
+    {
+        Hidden,
+        Visible,
+        Owned
+    }
 
     public class Cell : MonoBehaviour
     {
+        public ClaimState claimState = ClaimState.Hidden;
         private Vector3 _initialPos;
 
         public Vector3 InitialPos
