@@ -6,15 +6,29 @@ using UnityEngine.UI;
 
 namespace Hexpansion
 {
+    public enum HexDir
+    {
+        UpLeft,
+        UpRight,
+        Right,
+        DownRight,
+        DownLeft,
+        Left
+    }
+
     public class Cell : MonoBehaviour
     {
+        public Dictionary<HexDir, Cell> neighbours = new Dictionary<HexDir, Cell>();
 
-        public Cell NeighborUpLeft;
-        public Cell NeighborUpRight;
-        public Cell NeighborRight;
-        public Cell NeighborDownRight;
-        public Cell NeighborDownLeft;
-        public Cell NeighborLeft;
+        public List<Cell> Neighbours
+        {
+            get { return new List<Cell>(neighbours.Values); }
+        }
+
+        public Cell Neighbour(HexDir dir)
+        {
+            return neighbours[dir];
+        } 
 
         public ControlStates State = ControlStates.Locked;
         public CellTypes Type = CellTypes.Grass;
