@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 832a1db2073154c63adbb37be6d3c3ef
+timeCreated: 1512294705
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cactus
+    100002: Cactus_001
+    100004: Cactus_002
+    100006: Cactus_003
+    100008: Cactus_004
+    100010: Cactus_005
+    100012: Cactus_006
+    100014: Cactus_007
+    100016: Cactus_008
+    100018: Circle
+    100020: Circle_001
+    100022: Cylinder
+    100024: //RootNode
+    100026: Icosphere_009
+    100028: Icosphere_010
+    100030: Icosphere_012
+    100032: Stone1
+    100034: Stone2
+    100036: StoneW
+    400000: Cactus
+    400002: Cactus_001
+    400004: Cactus_002
+    400006: Cactus_003
+    400008: Cactus_004
+    400010: Cactus_005
+    400012: Cactus_006
+    400014: Cactus_007
+    400016: Cactus_008
+    400018: Circle
+    400020: Circle_001
+    400022: Cylinder
+    400024: //RootNode
+    400026: Icosphere_009
+    400028: Icosphere_010
+    400030: Icosphere_012
+    400032: Stone1
+    400034: Stone2
+    400036: StoneW
+    2300000: Cactus
+    2300002: Cactus_001
+    2300004: Cactus_002
+    2300006: Cactus_003
+    2300008: Cactus_004
+    2300010: Cactus_005
+    2300012: Cactus_006
+    2300014: Cactus_007
+    2300016: Cactus_008
+    2300018: Circle
+    2300020: Circle_001
+    2300022: Cylinder
+    2300024: Icosphere_009
+    2300026: Icosphere_010
+    2300028: Icosphere_012
+    2300030: Stone1
+    2300032: Stone2
+    2300034: StoneW
+    3300000: Cactus
+    3300002: Cactus_001
+    3300004: Cactus_002
+    3300006: Cactus_003
+    3300008: Cactus_004
+    3300010: Cactus_005
+    3300012: Cactus_006
+    3300014: Cactus_007
+    3300016: Cactus_008
+    3300018: Circle
+    3300020: Circle_001
+    3300022: Cylinder
+    3300024: Icosphere_009
+    3300026: Icosphere_010
+    3300028: Icosphere_012
+    3300030: Stone1
+    3300032: Stone2
+    3300034: StoneW
+    4300000: Cactus_008
+    4300002: Cactus_007
+    4300004: Cactus_006
+    4300006: Cactus_005
+    4300008: Cactus_004
+    4300010: Cactus_003
+    4300012: Cactus_002
+    4300014: Cactus_001
+    4300016: Cactus
+    4300018: Circle_001
+    4300020: Stone2
+    4300022: StoneW
+    4300024: Icosphere_012
+    4300026: Stone1
+    4300028: Icosphere_010
+    4300030: Icosphere_009
+    4300032: Circle
+    4300034: Cylinder
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sand
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

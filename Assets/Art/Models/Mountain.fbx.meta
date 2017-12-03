@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: de45816094c01fa489d8ea884847b4ca
-timeCreated: 1512287315
-licenseType: Free
+guid: d934b16c3f10d44a89cf3605440a5f40
+timeCreated: 1512294709
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -187,27 +187,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fir
-    second: {fileID: 2100000, guid: 9ab9cecb21be4e1458d8cb6ae1b7ead0, type: 2}
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Grass
-    second: {fileID: 2100000, guid: 2f3a4a6a6fca542469f024bd092000cd, type: 2}
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Snow
-    second: {fileID: 2100000, guid: 482890eeff955094d9d71d53440bd6fa, type: 2}
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stone
-    second: {fileID: 2100000, guid: 5d74b6feb344f214b83f25f14a61881e, type: 2}
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trunk
-    second: {fileID: 2100000, guid: 03546be729acdaa4abe6ee733616e3e9, type: 2}
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   materials:
     importMaterials: 1
     materialName: 0
