@@ -31,4 +31,5 @@ sysinfo.txt
 *.unitypackage
 
 Library/
+Assets/@Themes
 
