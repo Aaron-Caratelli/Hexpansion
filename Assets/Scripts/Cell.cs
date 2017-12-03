@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Linq;
 
 namespace Hexpansion
 {
@@ -14,76 +14,35 @@ namespace Hexpansion
         DownRight,
         DownLeft,
         Left
-    }
+    } 
 
     public class Cell : MonoBehaviour
     {
+        private Vector3 _initialPos;
+
+        public Vector3 InitialPos
+        {
+            get { return _initialPos; }
+        }
+
         public Dictionary<HexDir, Cell> neighbours = new Dictionary<HexDir, Cell>();
 
         public List<Cell> Neighbours
         {
-            get { return new List<Cell>(neighbours.Values); }
+            get
+            {
+                return neighbours.Values.Where(n => n != null).ToList();
+            }
         }
 
         public Cell Neighbour(HexDir dir)
         {
             return neighbours[dir];
-        } 
-
-        public ControlStates State = ControlStates.Locked;
-        public CellTypes Type = CellTypes.Grass;
-
-        public string Info = "This cell is boring.";        //Temporary, will display better systems 
-
-        public void Interact(int Button)
-        {
-            if (State == ControlStates.Available)
-            {
-                State = ControlStates.Owned;
-                UpdateGraphics();
-            }
-
-            if (State == ControlStates.Owned)
-            {
-                Debug.Log(Info);
-            }
         }
 
-        private void UpdateGraphics()
+        private void Start()
         {
-            switch (State)
-            {
-                case ControlStates.Owned:
-                    GetComponent<Image>().color = Color.green;
-                    break;
-                case ControlStates.Available:
-                    GetComponent<Image>().color = Color.yellow;
-                    break;
-                case ControlStates.Locked:
-                    GetComponent<Image>().color = Color.red;
-                    break;
-            }
+            _initialPos = transform.position;
         }
-    }
-
-    public enum ControlStates
-    {
-        Owned,
-        Available,
-        Locked,
-        Hidden
-    }
-
-    public enum CellTypes
-    {
-        City,
-        Town,
-        Road,
-        Grass,
-        Forest,
-        Library,
-        Crypt,
-        VoidPortal
-
     }
 }
