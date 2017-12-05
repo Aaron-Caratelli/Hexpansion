@@ -61,6 +61,7 @@ ModelImporter:
     2300030: Stone1
     2300032: Stone2
     2300034: StoneW
+    2300036: //RootNode
     3300000: Cactus
     3300002: Cactus.001
     3300004: Cactus.002
@@ -79,6 +80,7 @@ ModelImporter:
     3300030: Stone1
     3300032: Stone2
     3300034: StoneW
+    3300036: //RootNode
     4300000: Cactus.008
     4300002: Cactus.007
     4300004: Cactus.006
@@ -97,6 +99,7 @@ ModelImporter:
     4300030: Icosphere.009
     4300032: Circle
     4300034: Cylinder
+    4300036: Desert
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -123,6 +126,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stone
     second: {fileID: 2100000, guid: ac4ea7f450f6e40d5b0e380fe9664272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: e33be1c521e670640a68561e61bf61ea, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

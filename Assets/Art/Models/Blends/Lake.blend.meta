@@ -88,6 +88,7 @@ ModelImporter:
     2300048: Icosphere_012
     2300050: Icosphere_013
     2300052: Icosphere_014
+    2300054: //RootNode
     3300000: Circle
     3300002: Circle_001
     3300004: Cube
@@ -115,6 +116,7 @@ ModelImporter:
     3300048: Icosphere_012
     3300050: Icosphere_013
     3300052: Icosphere_014
+    3300054: //RootNode
     4300000: Cube_017
     4300002: Cube_016
     4300004: Cube_015
@@ -149,12 +151,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fir
-    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    second: {fileID: 2100000, guid: cbc4868bb2673494b9137b19c8d25cd0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Grass
-    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    second: {fileID: 2100000, guid: 9026799f3c2f447528878981f8f5f85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LakeMat
+    second: {fileID: 2100000, guid: fc061e1d69766614cbb112bcacaa03bd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -169,12 +176,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Stone
-    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    second: {fileID: 2100000, guid: a3e44f3607c6d42129ddfb004feaf6d1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trunk
-    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    second: {fileID: 2100000, guid: acdac39760700464199e22f61e729816, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 43885ed842ed0394d88a86b4cb70505d
-timeCreated: 1512299887
+timeCreated: 1512372018
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Icosphere_018
+    4300002: Mountain
     7400000: Default Take
     9500000: //RootNode
   externalObjects:

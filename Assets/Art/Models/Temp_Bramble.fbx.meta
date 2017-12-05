@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d8726ae37ed608e489380de639d1e250
-timeCreated: 1512299004
+timeCreated: 1512372030
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -37,7 +37,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bramble
-    second: {fileID: 2100000, guid: 9319c43f9d67f4745bbfd0fb5c41c7c0, type: 2}
+    second: {fileID: 2100000, guid: d7f29121a5f309643972b5b80ac4241f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
