@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 namespace Hexpansion
 {
@@ -59,6 +60,14 @@ namespace Hexpansion
             if (building != null)
                 DestroyImmediate(building.gameObject);
             building = Instantiate(Prefabs.Get<T>(), transform.position, Quaternion.identity, transform);
+            building.OnAddedToTile(this);
+        }
+
+        public void AddBuilding(Type t)
+        {
+            if (building != null)
+                DestroyImmediate(building.gameObject);
+            building = (Building)Instantiate(Prefabs.Get(t), transform.position, Quaternion.identity, transform);
             building.OnAddedToTile(this);
         }
 

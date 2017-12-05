@@ -34,40 +34,43 @@ namespace Hexpansion
                 buildingCell = buildOn;
                 var toCamera = Vector3.Normalize(Camera.main.transform.position - buildingCell.transform.position);
                 hexMenu = Object.Instantiate(Prefabs.Get<HexMenu>(), buildOn.transform.position, Quaternion.identity);
-                hexMenu.Populate();
+
+                hexMenu.StartAndSpread();
                 hex.RaiseTile(buildingCell);
             }
 
-
             if (state == PlacingState.SelectBuildingType)
             {
-                if (!ValidBuildingPlacementKeyPressed())
-                    return false;
+                var selection = GetBuildingSelection();
 
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                    buildingCell.AddBuilding<ExpansionTower>();
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
-                    buildingCell.AddBuilding<Cleanser>();
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
-                    buildingCell.AddBuilding<Enricher>();
-                else if (Input.GetKeyDown(KeyCode.Alpha4))
-                    buildingCell.AddBuilding<Foundation>();
-                else if (Input.GetKeyDown(KeyCode.Alpha5))
-                    buildingCell.AddBuilding<Spire>();
-
-                hexMenu.Clear();
-                return true;
+                if (selection != null)
+                {
+                    buildingCell.AddBuilding(selection.GetType());
+                    hexMenu.Clear();
+                    return true;
+                }
             }
+
             return false;
         }
 
-        private bool ValidBuildingPlacementKeyPressed()
+        private Building GetBuildingSelection ()
         {
-            return Input.GetKeyDown(KeyCode.Alpha1)
-                || Input.GetKeyDown(KeyCode.Alpha2)
-                || Input.GetKeyDown(KeyCode.Alpha3)
-                || Input.GetKeyDown(KeyCode.Alpha4)
-                || Input.GetKeyDown(KeyCode.Alpha5);
+            // If Mouse Down and Ray cast from Mouse
+            if (!Input.GetMouseButtonDown(0))
+                return null;
+
+            RaycastHit rayHit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out rayHit, 10000.0f))
+            {
+                var selection = rayHit.transform.GetComponent<Cell>();
+
+                if (hexMenu.cells.Contains(selection))
+                    return selection.building;
+            }
+            return null;
         }
     }
 }
