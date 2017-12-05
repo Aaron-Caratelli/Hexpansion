@@ -127,8 +127,6 @@ namespace Hexpansion
 
         public void Update()
         {
-            transform.position = _initialPos;
-
         }
 
         public void MakeBramble()

@@ -15,18 +15,18 @@ namespace Hexpansion
         private Vector3 _destination;
         public float speed;
 
-        public void TweenTo(Vector3 pos, float speed)
+        public void TweenTo(Vector3 pos, float tweenSpeed)
         {
             _isTweening = true;
             _destination = pos;
-            this.speed = speed;
+            this.speed = tweenSpeed;
         }
 
-        public void TweenBy(Vector3 delta, float speed)
+        public void TweenBy(Vector3 delta, float tweenSpeed)
         {
             _isTweening = true;
             _destination = transform.position + delta;
-            this.speed = speed;
+            this.speed = tweenSpeed;
         }
 
         public void Flip(float speed)

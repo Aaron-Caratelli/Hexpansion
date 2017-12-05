@@ -6,13 +6,22 @@ namespace Hexpansion
 {
     public class HexGridController : MonoBehaviour
     {
+        public enum GameState
+        {
+            Normal,
+            PlacingBuilding
+        }
+
         public float CellRaiseDist;
         public float CellRaiseSpeed;
         public float CellFlipSpeed;
 
+        public GameState gameState = GameState.Normal;
+
         public bool isChoosingBuildingType = false;
 
         public HexGrid hexGrid;
+        public BuildingPlacer buildingPlacer;
 
         private Cell _selectedTile;
         private List<Cell> _raisedTiles = new List<Cell>();
@@ -22,6 +31,7 @@ namespace Hexpansion
         void Start()
         {
             empire = new Empire();
+            buildingPlacer = new BuildingPlacer();
 
             hexGrid = FindObjectOfType<HexGrid>();
             hexGrid.Populate();
@@ -59,32 +69,49 @@ namespace Hexpansion
             if (Input.GetKeyDown(KeyCode.Space))
                 StartGame();
 
-            if (isChoosingBuildingType)
-                HandleBuildingPlacement();
-
-            if (Input.GetMouseButtonDown(0))    
+            if (gameState == GameState.PlacingBuilding)
             {
-                UpdateSelectedTile();
-
-                if (_selectedTile != null)
+                if (Input.GetMouseButtonDown(1))
                 {
-                    // What is the state of the Tile we're interacting with?
-                    var claimState = _selectedTile.claimState;
+                    gameState = GameState.Normal;
+                    buildingPlacer.Reset();
+                    LowerRaisedTiles();
+                }
+                else if (buildingPlacer.HandleBuildingPlacement(this, _selectedTile))
+                {
+                    gameState = GameState.Normal;
+                    empire.SpreadCorruption();
+                    LowerRaisedTiles();
+                    buildingPlacer.Reset();
+                }                    
+            }
 
-                    if (claimState == ClaimState.Hidden)
+            if (gameState == GameState.Normal)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    UpdateSelectedTile();
+
+                    if (_selectedTile != null)
                     {
-                        // Do nothing -> ERROR?
-                    }
-                    if (claimState == ClaimState.Visible)
-                    {
-                        TryToClaimTile();
-                    }
-                    else if (claimState == ClaimState.Owned)
-                    {
-                        isChoosingBuildingType = true;
+                        // What is the state of the Tile we're interacting with?
+                        var claimState = _selectedTile.claimState;
+
+                        if (claimState == ClaimState.Hidden)
+                        {
+                            // Do nothing -> ERROR?
+                        }
+                        if (claimState == ClaimState.Visible)
+                        {
+                            TryToClaimTile();
+                        }
+                        else if (claimState == ClaimState.Owned)
+                        {
+                            gameState = GameState.PlacingBuilding;
+                        }
                     }
                 }
-            }
+            }            
         }
 
         private void TryToClaimTile()
@@ -100,7 +127,6 @@ namespace Hexpansion
                 empire.ClaimCell(_selectedTile);
                 empire.SpreadCorruption();
             }
-
         }
 
         // Project a ray from mouse position to see which tile it hit.
@@ -108,7 +134,7 @@ namespace Hexpansion
         private void UpdateSelectedTile()
         {
             // We're selecting a new tile, lower all previously raised tiles.
-            LowerRaisedTiles();
+            //LowerRaisedTiles();
 
             RaycastHit rayHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -119,76 +145,37 @@ namespace Hexpansion
                 if (rayHit.transform != null)
                     _selectedTile = rayHit.transform.GetComponent<Cell>();                    
             }
-        }
+        }     
 
-        private void HandleBuildingPlacement()
+        public void RaiseTile(Cell tile)
         {
-            if (_selectedTile == null)
-                return;
-            if (_selectedTile.building != null)
-                return;
-            if (!ValidBuildingPlacementKeyPressed())
-                return;
-
-            empire.SpreadCorruption();
-            isChoosingBuildingType = false;
-
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                _selectedTile.AddBuilding<ExpansionTower>();
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-                _selectedTile.AddBuilding<Cleanser>();
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-                _selectedTile.AddBuilding<Enricher>();
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-                _selectedTile.AddBuilding<Foundation>();
-            else if (Input.GetKeyDown(KeyCode.Alpha5))
-                _selectedTile.AddBuilding<Spire>();
-        }
-
-        private bool ValidBuildingPlacementKeyPressed()
-        {
-            return Input.GetKeyDown(KeyCode.Alpha1)
-                || Input.GetKeyDown(KeyCode.Alpha2)
-                || Input.GetKeyDown(KeyCode.Alpha3)
-                || Input.GetKeyDown(KeyCode.Alpha4)
-                || Input.GetKeyDown(KeyCode.Alpha5);
-        }
-
-        private void RaiseTile(Cell tile)
-        {
-            if (tile.transform.position != tile.InitialPos)
+            if (_raisedTiles.Contains(tile))
                 return;
 
             tile.GetComponent<Tween>().TweenBy(new Vector3(0, CellRaiseDist, 0), CellRaiseSpeed);
-            //var toCamera = tile.transform.position - Camera.main.transform.position;
-            //var translation = Vector3.Normalize(toCamera) * CellRaiseDist;
-            //tile.transform.Translate(translation);
-
-
-            //tile.transform.Translate(new Vector3(0, CellRaiseDist, 0));
             _raisedTiles.Add(tile);
         }
 
-        private void RaiseTiles(List<Cell> tiles)
+        public void RaiseTiles(List<Cell> tiles)
         {
             foreach (var t in tiles)
                 RaiseTile(t);
         }
 
-        private void LowerTile(Cell tile)
+        public void LowerTile(Cell tile)
         {
             tile.GetComponent<Tween>().TweenTo(tile.InitialPos, CellRaiseSpeed);
             // tile.transform.position = tile.InitialPos;
             _raisedTiles.Remove(tile);
         }
 
-        private void LowerTiles(List<Cell> tiles)
+        public void LowerTiles(List<Cell> tiles)
         {
             foreach (var t in tiles)
                 LowerTile(t);
         }
 
-        private void LowerRaisedTiles()
+        public void LowerRaisedTiles()
         {
             foreach (var t in _raisedTiles)
                 t.GetComponent<Tween>().TweenTo(t.InitialPos, CellRaiseSpeed);
